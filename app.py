@@ -35,6 +35,10 @@ def page3():
 def last_function():
     return render_template("home.html", message = "vous êtes de retour sur la page 1".upper())
 
+@app.route("/achat")
+def achat():
+    return " branche validée"
+
 
 if __name__ == '__main__':
     app.run()
