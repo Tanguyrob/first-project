@@ -1,0 +1,16 @@
+<!doctype html>
+
+<html lang="en">
+
+    <head>
+		<link rel = "stylesheet"  type= "text/css " href= "{{ url_for('static', filename='main.css') }} ">
+		
+    </head>
+	
+    <body>
+		<h1>Bonjour {{message}}</h1>
+	    <h2 > Vous êtes sur la derniere page </h2>	
+		
+    </body>
+	<a href="{{ url_for('hello2') }}"> retour Page 1 </a>
+</html>
