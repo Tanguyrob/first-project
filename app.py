@@ -37,7 +37,11 @@ def last_function():
 
 @app.route("/achat")
 def achat():
-    return " branche validée"
+    return " branche achat validée"
+
+@app.route("/vente")
+def vente():
+    return " branche vente validée"
 
 
 if __name__ == '__main__':
