@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*
 
 from flask import Flask, render_template, request
+import paramiko
+
 
 app = Flask(__name__)
 
@@ -21,16 +23,7 @@ def page3():
     print(text)
     processed_text = text.upper()
     return render_template("page_suivante.html", message = processed_text)
-    '''
-    else:
-        return "methode get" 
-    '''
-    '''       
-    text = request.form['text']
-    processed_text = text.upper()
-    return render_template("page_suivante.html", message = processed_text)
-    '''
-
+    
 @app.route("/fin")
 def last_function():
     return render_template("home.html", message = "vous êtes de retour sur la page 1".upper())
@@ -43,6 +36,10 @@ def achat():
 def vente():
     return " branche vente validée"
 
+def paramiko_test():
+    #créer instance de connexion
+    client = paramiko.SSHClient()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
 if __name__ == '__main__':
     app.run()
